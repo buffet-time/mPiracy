@@ -12,7 +12,7 @@ const year = startingTime.getFullYear()
 
 const hoursAndMinutes = ref(`${hour + 1}h${minute}`)
 const date = ref(`${day}.${month}.${year}`)
-const timerText = ref('')
+const timerText = ref('60:00')
 
 function startTimer(duration: number) {
   let timer = duration,
