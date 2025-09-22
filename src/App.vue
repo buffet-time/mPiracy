@@ -10,9 +10,9 @@ const day = startingTime.getDate()
 const month = startingTime.getMonth()
 const year = startingTime.getFullYear()
 
-const blah = ref(`${hour + 1}h${minute}`)
-const blah2 = ref(`${day}.${month}.${year}`)
-const blah3 = ref('')
+const hoursAndMinutes = ref(`${hour + 1}h${minute}`)
+const date = ref(`${day}.${month}.${year}`)
+const timerText = ref('')
 
 function startTimer(duration: number) {
   let timer = duration,
@@ -28,7 +28,7 @@ function startTimer(duration: number) {
 
     --timer
 
-    blah3.value = `${minutes}:${seconds}`
+    timerText.value = `${minutes}:${seconds}`
   }
 
   setInterval(() => {
@@ -48,8 +48,8 @@ onMounted(() => {
   <img :src="gif" class="gif" />
 
   <div class="container">
-    <p class="text-one">Validé à {{ blah }} le {{ blah2 }}</p>
-    <p class="text-two">{{ blah3 }}</p>
+    <p class="text-one">Validé à {{ hoursAndMinutes }} le {{ date }}</p>
+    <p class="text-two">{{ timerText }}</p>
   </div>
 </template>
 
