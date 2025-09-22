@@ -11,7 +11,7 @@ const day = startingTime.getDate()
 const month = startingTime.getMonth()
 const year = startingTime.getFullYear()
 
-const hoursAndMinutes = ref(`${hour + 1}h${minute}`)
+const hoursAndMinutes = ref(`${hour}h${minute}`)
 const date = ref(`${day}.${month}.${year}`)
 const timerText = ref('60:00')
 
