@@ -66,9 +66,9 @@ onMounted(() => {
   font-family: 'Segoe UI';
 
   top: 820px;
-  text-align: center;
-
   font-size: 24px;
+
+  left: 200px;
 
   .text-one {
     color: lightgray;
@@ -76,6 +76,7 @@ onMounted(() => {
   }
 
   .text-two {
+    padding-left: 118px;
     color: black;
     margin: 0;
     padding-top: 12px;
