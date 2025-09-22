@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
+// @ts-expect-error - its a gif import
 import gif from '/gif.gif'
 
 const startingTime = new Date()

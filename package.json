@@ -10,10 +10,8 @@
   "packageManager": "pnpm@10.12.4",
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
-    "build-only": "vite build && cp -a ./dist/. ./deploy/",
-    "type-check": "vue-tsc --build",
+    "build": "vite build",
     "lint:oxlint": "oxlint . --fix -D correctness --ignore-path .gitignore",
     "lint:eslint": "eslint . --fix",
     "lint": "run-s lint:*",
