@@ -1,33 +1,19 @@
-# Does a lint and format check then builds and deploys when there's a merge to master
-name: Deploy to github pages
-permissions:
-  contents: write
+name: Deploy website
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+  pull_request:
 
 jobs:
-  Check_and_Publish:
-    runs-on: ubuntu-latest
-
+  deploy:
+    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: pnpm/action-setup@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-
-      - name: Install `node_modules`
-        run: pnpm install
-
-      - name: Build
-        run: pnpm build
-
+      - uses: actions/checkout@v3
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
         with:
-          branch: gh-pages
-          folder: dist
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist # deploy dist folder
