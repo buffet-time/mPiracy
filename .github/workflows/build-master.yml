@@ -1,5 +1,7 @@
 # Does a lint and format check then builds and deploys when there's a merge to master
 name: Deploy to github pages
+permissions:
+  contents: write
 
 on:
   push:
