@@ -46,6 +46,7 @@ onMounted(() => {
 
 <template>
   <img :src="gif" class="gif" />
+
   <div class="container">
     <p class="text-one">Validé à {{ blah }} le {{ blah2 }}</p>
     <p class="text-two">{{ blah3 }}</p>
